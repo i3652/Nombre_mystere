@@ -7,7 +7,7 @@ public class Lancejeux {
 	static int Premiermenu() {
 		System.out.println("---------------------MENU-------------------------");
 		System.out.println("1)->Premier Mode ");
-		System.out.println("2)->DeuxiÈme Mode");
+		System.out.println("2)->Deuxi√©me Mode");
 		System.out.println("--------------------------------------------------");
 		int index;
 		do {
@@ -41,17 +41,11 @@ public class Lancejeux {
 		DeuxiemeMode DeuxiemeMode = new DeuxiemeMode();
 		PremierMode PremierMode = new PremierMode();
 		Jeux jeux = null;
-		boolean premierfois = true;
 		int choix = 0;
-		boolean tst = true;
 		int[] NumeroReponse = new int[4];
 		String[] ResultadesOperateur = { "", "", "", "" };
-		while (tst) {
-			if (premierfois) {
-				choix = Premiermenu();
-				premierfois = false;
-			}
-
+		choix = Premiermenu();
+		while (true) {
 			if (choix == 1)
 				jeux = PremierMode;
 			else
@@ -72,12 +66,12 @@ public class Lancejeux {
 			}
 			System.out.println("\n--------------------------------------------------");
 			if (jeux.TesteReponse(ResultadesOperateur)) {
-				System.out.print("FÈlicitation, gagnÈ!. Le  resultat   :");
+				System.out.print("F√©licitation, gagn√©!. Le  resultat   :");
 				for (int c = 0; c < 4; c++)
 					System.out.print(NumeroAleatoire[c]);
 				System.out.print("\n");
 			} else {
-				System.out.print("le  rÈsultat  :");
+				System.out.print("le  r√©sultat   :");
 				for (int c = 0; c < 4; c++)
 					System.out.print(+NumeroAleatoire[c]);
 				System.out.print("\n");
@@ -86,9 +80,8 @@ public class Lancejeux {
 			int Deuxiememenu = Deuxiememenu();
 			;
 			if (Deuxiememenu == 1) {
-				System.out.println("*******************Rejouer au mÈme mode *******************");
+				System.out.println("*******************Rejouer au mÔøΩme mode *******************");
 			} else if (Deuxiememenu == 3) {
-				tst = false;
 				System.out.println("*******************Quitter le Systeme*******************");
 				System.exit(0);
 			} else {
